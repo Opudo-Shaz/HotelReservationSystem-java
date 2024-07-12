@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rooms</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        /* Custom styles can go here */
+    </style>
+</head>
+<body class="bg-light">
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container mt-5">
+    <h1 class="display-4 mb-4">Rooms</h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Room Number</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Availability</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="room : ${rooms}">
+            <td th:text="${room.id}"></td>
+            <td th:text="${room.roomNumber}"></td>
+            <td th:text="${room.type}"></td>
+            <td th:text="${room.price}"></td>
+            <td th:text="${room.isAvailable ? 'Available' : 'Not Available'}"></td>
+            <td>
+                <a th:href="@{'/viewroom/' + ${room.id}}" class="btn btn-info btn-sm">View</a>
+                <a th:href="@{'/bookroom/' + ${room.id}}" class="btn btn-success btn-sm">Make Reservation</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/user/login" class="btn btn-primary mt-3">Back to Home</a>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<script th:src="@{/js/jquery-3.5.1.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

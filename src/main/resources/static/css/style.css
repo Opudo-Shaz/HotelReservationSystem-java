@@ -1,0 +1,28 @@
+/* Custom CSS for the Navbar */
+
+/* Set navbar background color and link colors */
+.navbar {
+    background-color: black; /* Blue background */
+}
+
+.navbar-brand {
+    color: white; /* White brand color */
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: #ccc; /* Lighter color on hover */
+}
+
+.navbar-nav .nav-link {
+    color: white; /* White links */
+}
+
+.navbar-nav .nav-link:hover {
+    color: black; /* Black links on hover */
+}
+
+/* Move the links to the right */
+.navbar-nav {
+    margin-left: auto;
+}

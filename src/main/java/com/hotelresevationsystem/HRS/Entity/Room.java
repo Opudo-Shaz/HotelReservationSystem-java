@@ -75,7 +75,8 @@ public class Room {
         this.isPaid = isPaid;
     }
 
-    public void isAvailable() {
+    public boolean isAvailable() {
+        return false;
     }
 
     public void setAvailable(boolean b) {
